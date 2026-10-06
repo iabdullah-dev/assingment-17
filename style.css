@@ -1,12 +1,9 @@
 /* =========================================================
-   APPLE STYLE WEBSITE
-   Responsive HTML + CSS Assignment
+   APPLE STYLE ASSIGNMENT
+   Desktop + Laptop + Tablet + Mobile
    ========================================================= */
 
-
-/* =========================================================
-   1. RESET
-   ========================================================= */
+/* ---------- RESET ---------- */
 
 * {
     box-sizing: border-box;
@@ -16,7 +13,6 @@
 
 html {
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -24,13 +20,7 @@ body {
     overflow-x: hidden;
     background: #fff;
     color: #1d1d1f;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Text",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -52,25 +42,29 @@ sup {
     font-size: 0.5em;
 }
 
-
-/* =========================================================
-   2. MOBILE MENU INPUT
-   ========================================================= */
-
 #menu-toggle {
     display: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
-/* =========================================================
-   3. NAVBAR
-   ========================================================= */
+/* ---------- NAV ---------- */
 
-.navbar {
+nav {
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     z-index: 100;
     height: 44px;
     background: rgba(22, 22, 23, 0.8);
@@ -78,74 +72,73 @@ sup {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
-.nav-list {
+nav ul {
     width: 100%;
     max-width: 1024px;
     height: 44px;
     margin: 0 auto;
     padding: 0 22px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.nav-list li {
-    flex-shrink: 0;
-}
-
-.nav-list a {
+nav a {
     height: 44px;
-
     display: flex;
     align-items: center;
-
     color: #e8e8ed;
     font-size: 12px;
     opacity: 0.8;
-
     transition: opacity 0.2s ease;
 }
 
-.nav-list a:hover {
+nav a:hover {
     opacity: 1;
 }
 
-.nav-icon a {
+nav .ic a {
     opacity: 0.9;
 }
 
-.menu-item {
+nav .menu {
     display: none;
 }
 
+.menu-btn {
+    width: 40px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+}
 
-/* =========================================================
-   4. MAIN
-   ========================================================= */
+.menu-btn span {
+    width: 17px;
+    height: 1px;
+    background: #e8e8ed;
+    transition: transform 0.25s ease;
+}
+
+/* ---------- MAIN TILES ---------- */
 
 main {
     padding-top: 0;
 }
 
-
-/* =========================================================
-   5. COMMON TILE
-   ========================================================= */
-
 .tile {
     position: relative;
     min-height: 580px;
     margin-bottom: 12px;
-
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background: #f5f5f7;
     text-align: center;
+    background: #f5f5f7;
 }
 
 .tile.dark {
@@ -156,19 +149,16 @@ main {
 .tile .copy {
     position: relative;
     z-index: 2;
-
     width: 100%;
     padding-top: 56px;
 }
 
-.tile .bg {
+.tile img.bg {
     position: absolute;
     inset: 0;
     z-index: 1;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center bottom;
 }
@@ -178,11 +168,6 @@ main {
     font-weight: 600;
     letter-spacing: -0.003em;
 }
-
-
-/* =========================================================
-   6. HERO
-   ========================================================= */
 
 .hero {
     min-height: 692px;
@@ -199,22 +184,9 @@ main {
 
 .hero p.sub {
     margin-top: 6px;
-
     font-size: 28px;
     line-height: 1.14;
 }
-
-.preorder {
-    margin-top: 10px;
-
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   7. BOTTOM CONTENT
-   ========================================================= */
 
 .bot {
     position: absolute;
@@ -222,9 +194,7 @@ main {
     bottom: 56px;
     left: 0;
     z-index: 2;
-
     padding: 0 16px;
-
     text-align: center;
 }
 
@@ -234,14 +204,21 @@ main {
     font-weight: 400;
 }
 
+.call {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 600;
+}
 
-/* =========================================================
-   8. LOGOS
-   ========================================================= */
+.preorder {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
 
 .logo {
-    display: block;
     height: 56px;
+    display: block;
     margin: 0 auto;
 }
 
@@ -249,60 +226,37 @@ main {
     padding-top: 56px;
 }
 
-.watch-logo {
+.watch-series-logo {
     height: 52px;
 }
 
-.promo .logo {
-    height: 48px;
-}
-
-
-/* =========================================================
-   9. BUTTONS
-   ========================================================= */
+/* ---------- BUTTONS ---------- */
 
 .ctas {
-    margin-top: 20px;
-
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
     gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .btn {
     display: inline-block;
-
     padding: 11px 21px;
-
     border-radius: 980px;
-
     background: #0071e3;
     color: #fff;
-
     font-size: 17px;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .btn:hover {
     background: #0077ed;
 }
 
-.btn:active {
-    transform: scale(0.98);
-}
-
 .btn.sec {
     padding: 10px 20px;
-
     border: 1px solid #0066cc;
-
     background: transparent;
     color: #0066cc;
 }
@@ -312,24 +266,19 @@ main {
     color: #2997ff;
 }
 
-
-/* =========================================================
-   10. PROMO GRID
-   ========================================================= */
+/* ---------- PROMO GRID ---------- */
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
-
     margin-bottom: 12px;
     padding: 0 12px;
 }
 
 .grid .tile {
     min-height: 580px;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .promo h3 {
@@ -341,55 +290,47 @@ main {
     max-width: 600px;
     margin: 6px auto 0;
     padding: 0 14%;
-
     font-size: 24px;
     line-height: 1.17;
     font-weight: 400;
 }
 
-.education-tile h3 {
+.promo .logo {
+    height: 48px;
+}
+
+.education-title {
     font-size: 40px;
 }
 
-.education-tile .sub {
-    padding: 0 20px;
+.education-sub {
     margin-top: 6px;
-
+    padding: 0 20px;
     font-size: 21px;
 }
 
+/* ---------- ENTERTAINMENT ---------- */
 
-/* =========================================================
-   11. ENTERTAINMENT
-   ========================================================= */
-
-.entertainment {
+.ent {
     padding: 60px 0 40px;
     background: #fff;
 }
 
-.entertainment > h2 {
+.ent h2 {
     max-width: 1260px;
-
     margin: 0 auto 32px;
     padding: 0 22px;
-
     font-size: 48px;
     font-weight: 600;
 }
 
 .row {
     display: flex;
-
     gap: 12px;
-
     overflow-x: auto;
-
     padding: 0 22px 12px;
-
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-
     -webkit-overflow-scrolling: touch;
 }
 
@@ -401,55 +342,34 @@ main {
     margin-top: 12px;
 }
 
-
-/* =========================================================
-   12. ENTERTAINMENT CARD
-   ========================================================= */
-
 .card {
     position: relative;
-
     flex: 0 0 min(80vw, 780px);
-
     height: 420px;
-
-    overflow: hidden;
-
     border-radius: 28px;
-
+    overflow: hidden;
     background: #000;
     color: #fff;
-
     scroll-snap-align: center;
 }
 
 .card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
 .card .info {
     position: absolute;
+    left: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-
-    min-height: 110px;
-
+    min-height: 100px;
     padding: 24px;
-
     display: flex;
     align-items: center;
-
     gap: 14px;
-
-    background:
-        linear-gradient(
-            transparent,
-            rgba(0, 0, 0, 0.75)
-        );
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
 }
 
 .card .info span {
@@ -459,115 +379,99 @@ main {
 
 .card .btn {
     flex-shrink: 0;
-
     padding: 8px 16px;
-
     background: #f5f5f7;
     color: #1d1d1f;
-
     font-size: 14px;
-
     white-space: nowrap;
 }
 
 .row.small .card {
     flex-basis: 320px;
     height: 320px;
-
     border-radius: 20px;
 }
 
-
-/* =========================================================
-   13. FOOTER
-   ========================================================= */
+/* ---------- FOOTER ---------- */
 
 footer {
     background: #f5f5f7;
-
     color: #6e6e73;
-
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.33;
 }
 
-.footer-notes,
-.footer-links,
-.footer-bottom {
-    width: 100%;
+.fin {
     max-width: 1024px;
-
     margin: 0 auto;
-    padding-left: 22px;
-    padding-right: 22px;
+    padding: 20px 22px;
 }
 
-.footer-notes {
-    padding-top: 25px;
-    padding-bottom: 20px;
-
-    border-bottom: 1px solid #d2d2d7;
+.fin ol {
+    margin-bottom: 8px;
+    padding-left: 16px;
 }
 
-.footer-notes p + p {
-    margin-top: 10px;
+.fin li {
+    margin-bottom: 8px;
 }
 
-.footer-links {
+.fin p {
+    margin-bottom: 8px;
+}
+
+.fin a,
+.end a {
+    color: #06c;
+}
+
+.dir {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px 22px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
     gap: 20px;
-
-    padding-top: 20px;
-    padding-bottom: 20px;
-
+    border-top: 1px solid #d2d2d7;
     border-bottom: 1px solid #d2d2d7;
 }
 
-.footer-links h3 {
-    margin-bottom: 8px;
-
+.dir h3 {
+    margin: 0 0 6px;
     color: #1d1d1f;
     font-size: 12px;
     font-weight: 600;
 }
 
-.footer-links ul {
-    margin-bottom: 18px;
+.dir ul {
+    margin-bottom: 16px;
 }
 
-.footer-links li {
-    margin-bottom: 7px;
+.dir li {
+    margin-bottom: 6px;
 }
 
-.footer-links a:hover {
+.dir a:hover {
     color: #1d1d1f;
     text-decoration: underline;
 }
 
-.footer-bottom {
-    padding-top: 18px;
-    padding-bottom: 20px;
+.end {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 16px 22px 20px;
 }
 
-.shop-line {
-    padding-bottom: 14px;
-
+.end .shop {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #d2d2d7;
 }
 
-.footer-bottom a {
-    color: #06c;
-}
-
 .legal {
-    padding-top: 14px;
-
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     gap: 8px 16px;
 }
 
@@ -579,7 +483,6 @@ footer {
 
 .legal ul a {
     padding-right: 12px;
-
     border-right: 1px solid #d2d2d7;
 }
 
@@ -587,42 +490,15 @@ footer {
     border-right: 0;
 }
 
-.location {
+.loc {
     margin-left: auto;
 }
 
-
 /* =========================================================
-   14. LARGE DESKTOP
-   ========================================================= */
-
-@media (min-width: 1200px) {
-
-    .hero {
-        min-height: 720px;
-    }
-
-    .hero h2 {
-        font-size: 58px;
-    }
-
-    .hero p.sub,
-    .bot .sub {
-        font-size: 29px;
-    }
-
-    .grid .tile {
-        min-height: 600px;
-    }
-}
-
-
-/* =========================================================
-   15. LAPTOP
+   LAPTOP
    ========================================================= */
 
 @media (max-width: 1199px) {
-
     .hero {
         min-height: 650px;
     }
@@ -640,27 +516,25 @@ footer {
         min-height: 540px;
     }
 
-    .entertainment > h2 {
+    .ent h2 {
         font-size: 44px;
     }
 
-    .footer-links {
+    .dir {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-
 /* =========================================================
-   16. TABLET / SMALL LAPTOP
+   TABLET / SMALL LAPTOP
    ========================================================= */
 
 @media (max-width: 1024px) {
-
-    .nav-list {
+    nav ul {
         padding: 0 18px;
     }
 
-    .nav-list a {
+    nav a {
         font-size: 11px;
     }
 
@@ -682,7 +556,7 @@ footer {
     }
 
     .promo h3,
-    .education-tile h3 {
+    .education-title {
         font-size: 34px;
     }
 
@@ -690,11 +564,11 @@ footer {
         font-size: 21px;
     }
 
-    .entertainment {
+    .ent {
         padding-top: 50px;
     }
 
-    .entertainment > h2 {
+    .ent h2 {
         font-size: 38px;
     }
 
@@ -703,18 +577,16 @@ footer {
         height: 380px;
     }
 
-    .footer-links {
+    .dir {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-
 /* =========================================================
-   17. TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
-
     .grid {
         grid-template-columns: 1fr;
     }
@@ -723,7 +595,7 @@ footer {
         min-height: 550px;
     }
 
-    .entertainment > h2 {
+    .ent h2 {
         font-size: 34px;
     }
 
@@ -732,193 +604,228 @@ footer {
         height: 360px;
     }
 
-    .footer-links {
+    .dir {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-
 /* =========================================================
-   18. MOBILE
+   MOBILE ONLY
+   Desktop and laptop layout stays above this point.
    ========================================================= */
 
 @media (max-width: 734px) {
 
-    /* ---------- Navbar ---------- */
+    /* ---------- NAV ---------- */
 
-    .navbar {
-        height: 48px;
+    nav {
+        height: 44px;
     }
 
-    .nav-list {
-        height: 48px;
+    nav ul {
+        height: 44px;
         padding: 0 14px;
     }
 
-    .nav-list a {
-        height: 48px;
-    }
-
-    .desktop-link {
+    nav ul > li:not(.ic):not(.menu) {
         display: none;
     }
 
-    .menu-item {
+    nav .menu {
         display: block;
-        margin-left: 4px;
     }
 
-    .menu-button {
+    nav .menu-btn {
         width: 40px;
-        height: 48px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        gap: 6px;
-
-        cursor: pointer;
+        height: 44px;
     }
 
-    .menu-button span {
-        width: 17px;
-        height: 1px;
+    /* Mobile menu open */
 
-        background: #e8e8ed;
-
-        transition: transform 0.25s ease;
-    }
-
-
-    /* ---------- Hamburger Animation ---------- */
-
-    #menu-toggle:checked + .navbar {
+    #menu-toggle:checked + nav {
         height: 100vh;
         overflow-y: auto;
-
         background: rgba(22, 22, 23, 0.98);
     }
 
-    #menu-toggle:checked + .navbar .nav-list {
+    #menu-toggle:checked + nav ul {
         height: auto;
-
+        min-height: 44px;
         flex-wrap: wrap;
         align-items: flex-start;
-
-        padding-top: 0;
     }
 
-    #menu-toggle:checked + .navbar .desktop-link {
+    #menu-toggle:checked + nav ul > li:not(.ic):not(.menu) {
         display: block;
-
         width: 100%;
-
         order: 5;
     }
 
-    #menu-toggle:checked
-    + .navbar
-    .desktop-link a {
+    #menu-toggle:checked + nav ul > li:not(.ic):not(.menu) a {
         height: auto;
-
-        padding: 13px 0;
-
+        padding: 12px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-
-        font-size: 21px;
-        font-weight: 500;
-
+        font-size: 20px;
         opacity: 1;
     }
 
-    #menu-toggle:checked
-    + .navbar
-    .menu-button span:first-child {
+    #menu-toggle:checked + nav .menu-btn span:first-child {
         transform: translateY(3.5px) rotate(45deg);
     }
 
-    #menu-toggle:checked
-    + .navbar
-    .menu-button span:last-child {
+    #menu-toggle:checked + nav .menu-btn span:last-child {
         transform: translateY(-3.5px) rotate(-45deg);
     }
 
+    /* ---------- HERO: MOBILE TEXT ABOVE IMAGE ---------- */
 
-    /* ---------- Hero ---------- */
+    .hero-section {
+        width: 100%;
+    }
 
-    .hero {
-        min-height: 540px;
+    .tile.hero {
+        min-height: auto;
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tile.hero .copy {
+        width: 100%;
+        padding: 55px 16px 10px;
+        order: 1;
     }
 
     .hero:first-child .copy {
-        padding-top: 72px;
-    }
-
-    .tile .copy {
-        padding-top: 40px;
+        padding-top: 62px;
     }
 
     .hero h2 {
-        font-size: 34px;
+        font-size: 29px;
+        line-height: 1.1;
     }
 
-    .hero p.sub,
-    .bot .sub {
-        font-size: 19px;
+    .hero p.sub {
+        margin-top: 5px;
+        font-size: 17px;
+        line-height: 1.2;
     }
 
     .preorder {
-        font-size: 12px;
+        margin-top: 9px;
+        font-size: 11px;
+        line-height: 1.4;
     }
-
-    .watch-logo {
-        height: 38px;
-    }
-
-
-    /* ---------- Buttons ---------- */
 
     .ctas {
         gap: 10px;
-        margin-top: 16px;
+        margin-top: 14px;
     }
 
     .btn {
-        padding: 9px 17px;
-        font-size: 14px;
+        padding: 8px 15px;
+        font-size: 13px;
     }
 
     .btn.sec {
-        padding: 8px 16px;
+        padding: 7px 14px;
     }
 
-
-    /* ---------- Bottom content ---------- */
-
-    .bot {
-        bottom: 32px;
-        padding: 0 14px;
+    /* This is the important mobile change. */
+    .tile.hero img.bg {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        margin-top: 10px;
+        object-fit: contain;
+        object-position: center;
+        order: 2;
     }
 
+    /* First iPhone */
 
-    /* ---------- Promo ---------- */
+    .hero:first-child {
+        background: #000;
+    }
+
+    .hero:first-child img.bg {
+        max-height: 275px;
+        margin-top: 12px;
+    }
+
+    /* iPhone Duo */
+
+    .hero:nth-child(2) {
+        background: #f5f5f7;
+    }
+
+    .hero:nth-child(2) img.bg {
+        max-height: 280px;
+    }
+
+    /* Watch */
+
+    .hero:nth-child(3) {
+        min-height: 500px;
+        background: #000;
+    }
+
+    .watch-logo-copy {
+        padding-top: 42px !important;
+    }
+
+    .watch-series-logo {
+        height: 34px;
+    }
+
+    .hero:nth-child(3) img.bg {
+        max-height: 250px;
+        margin-top: 6px;
+    }
+
+    .hero:nth-child(3) .bot {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        order: 3;
+        padding: 12px 20px 22px;
+    }
+
+    .bot .sub {
+        font-size: 17px;
+        line-height: 1.2;
+    }
+
+    /* ---------- PROMO ---------- */
 
     .grid {
-        grid-template-columns: 1fr;
-
-        gap: 8px;
-
+        display: block;
+        margin: 0;
         padding: 0 8px;
     }
 
     .grid .tile {
         min-height: 470px;
+        margin-bottom: 8px;
+    }
+
+    .grid .tile .copy {
+        padding-top: 45px;
+    }
+
+    .grid .tile img.bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .promo h3,
-    .education-tile h3 {
+    .education-title {
         font-size: 28px;
     }
 
@@ -927,7 +834,7 @@ footer {
         font-size: 18px;
     }
 
-    .education-tile .sub {
+    .education-sub {
         font-size: 17px;
     }
 
@@ -935,18 +842,16 @@ footer {
         height: 36px;
     }
 
+    /* ---------- ENTERTAINMENT ---------- */
 
-    /* ---------- Entertainment ---------- */
-
-    .entertainment {
+    .ent {
         padding: 40px 0 25px;
     }
 
-    .entertainment > h2 {
+    .ent h2 {
         margin-bottom: 18px;
         padding: 0 16px;
-
-        font-size: 28px;
+        font-size: 27px;
     }
 
     .row {
@@ -956,27 +861,15 @@ footer {
 
     .card {
         flex-basis: 86vw;
-        height: 300px;
+        height: 290px;
         border-radius: 20px;
-    }
-
-    .row.small {
-        margin-top: 8px;
-    }
-
-    .row.small .card {
-        flex-basis: 220px;
-        height: 220px;
-        border-radius: 16px;
     }
 
     .card .info {
         min-height: auto;
-
         padding: 14px;
-
-        flex-wrap: wrap;
         gap: 8px;
+        flex-wrap: wrap;
     }
 
     .card .info span {
@@ -988,29 +881,37 @@ footer {
         font-size: 11px;
     }
 
+    .row.small {
+        margin-top: 8px;
+    }
 
-    /* ---------- Footer ---------- */
+    .row.small .card {
+        flex-basis: 210px;
+        height: 210px;
+        border-radius: 16px;
+    }
 
-    .footer-notes,
-    .footer-links,
-    .footer-bottom {
+    /* ---------- FOOTER ---------- */
+
+    .fin,
+    .end {
         padding-left: 16px;
         padding-right: 16px;
     }
 
-    .footer-links {
+    .dir {
         grid-template-columns: 1fr;
-
         gap: 0;
+        padding: 12px 16px;
     }
 
-    .footer-links h3 {
+    .dir h3 {
         margin-top: 12px;
         font-size: 14px;
     }
 
-    .footer-links ul {
-        margin-bottom: 12px;
+    .dir ul {
+        margin-bottom: 8px;
     }
 
     .legal {
@@ -1018,110 +919,78 @@ footer {
         align-items: flex-start;
     }
 
-    .location {
+    .loc {
         margin-left: 0;
     }
 }
 
-
 /* =========================================================
-   19. SMALL PHONES
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
-
-    .nav-list {
-        padding: 0 12px;
-    }
-
-    .hero {
-        min-height: 500px;
-    }
-
-    .hero:first-child .copy {
-        padding-top: 65px;
-    }
-
     .hero h2 {
-        font-size: 29px;
+        font-size: 28px;
     }
 
     .hero p.sub,
     .bot .sub {
-        font-size: 17px;
-    }
-
-    .tile .copy {
-        padding-top: 34px;
-    }
-
-    .grid .tile {
-        min-height: 430px;
-    }
-
-    .promo h3,
-    .education-tile h3 {
-        font-size: 25px;
-    }
-
-    .promo p.sub {
         font-size: 16px;
     }
 
-    .education-tile .sub {
-        font-size: 15px;
+    .hero:first-child img.bg {
+        max-height: 245px;
     }
 
-    .btn {
-        padding: 8px 14px;
-        font-size: 13px;
+    .hero:nth-child(2) img.bg {
+        max-height: 255px;
+    }
+
+    .hero:nth-child(3) img.bg {
+        max-height: 225px;
+    }
+
+    .grid .tile {
+        min-height: 440px;
     }
 
     .card {
         flex-basis: 88vw;
         height: 270px;
     }
-
-    .row.small .card {
-        flex-basis: 190px;
-        height: 190px;
-    }
-
-    .entertainment > h2 {
-        font-size: 25px;
-    }
 }
 
-
 /* =========================================================
-   20. VERY SMALL PHONES
+   VERY SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 360px) {
-
-    .hero {
-        min-height: 470px;
-    }
-
     .hero h2 {
         font-size: 26px;
     }
 
-    .hero p.sub,
-    .bot .sub {
-        font-size: 16px;
+    .hero:first-child .copy {
+        padding-top: 58px;
     }
 
-    .btn {
-        padding: 7px 12px;
-        font-size: 12px;
+    .hero:first-child img.bg {
+        max-height: 220px;
+    }
+
+    .hero:nth-child(2) img.bg {
+        max-height: 230px;
+    }
+
+    .hero:nth-child(3) img.bg {
+        max-height: 205px;
     }
 
     .grid .tile {
-        min-height: 400px;
+        min-height: 410px;
     }
 
-    .entertainment > h2 {
-        font-size: 23px;
+    .card {
+        flex-basis: 90vw;
+        height: 250px;
     }
 }
