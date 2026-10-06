@@ -8,9 +8,12 @@
   <title>Apple</title>
   <meta name="description"
     content="Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support.">
+<base target="_blank">
 </head>
 
 <body>
+  <input type="checkbox" id="menu-toggle" hidden>
+
   <nav>
     <ul>
       <li class="ic">
@@ -47,6 +50,12 @@
             <path d="M4.6 21.5v-1.8a2.4 2.4 0 0 1 4.8 0v1.8" />
           </svg>
         </a>
+      </li>
+      <!-- Mobile menu button (sirf mobile par dikhta hai) -->
+      <li class="menu">
+        <label for="menu-toggle" class="menu-btn" aria-label="Menu">
+          <span></span><span></span>
+        </label>
       </li>
     </ul>
   </nav>
@@ -495,4 +504,3 @@
 </body>
 
 </html>
-
